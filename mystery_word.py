@@ -4,12 +4,14 @@
 
 import random
 
+# file input and random word
+
 with open('/usr/share/dict/words', ) as temp_file:
     text_to_analyze = temp_file.read()
-    text_to_analyze = text_to_analyze.lower()
-#    list_to_analyze = text_to_analyze.split()
-print(text_to_analyze)
-
+    text_to_analyze = text_to_analyze.lower().split()
+    word = random.choice(text_to_analyze)
+print(word)
+# print(text_to_analyze)
 
 
 
@@ -20,7 +22,7 @@ print(text_to_analyze)
 
 
 # display: working through it
-word = ('cat')
+# word = ('cat')  #this no longer needed due to file input logic
 game_word = len(word) * "-"
 # print(word)
 display = list(game_word)
