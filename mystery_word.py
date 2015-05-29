@@ -18,4 +18,4 @@ print(word)
 display = list(game_word)
 display[0] = "c"
 display[2] = "t"
-print(display)
+print(' '.join(display)) # from Soren on the .join for nicer looking display
