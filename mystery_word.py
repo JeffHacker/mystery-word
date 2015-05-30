@@ -1,13 +1,18 @@
 # file input and random word
 import random
+import os
+os.system("clear")  # Me, and PJ helped with syntax! whoop!
+print("\n")
+
 with open('/usr/share/dict/words', ) as temp_file:
     text_to_analyze = temp_file.read()
     text_to_analyze = text_to_analyze.lower().split()
     word = random.choice(text_to_analyze)
-print(word)
+print("The secret word \"" + word + "\" for test purposes as I do not have a loop")
+print("\n")
 game_word = len(word) * "-"
 word_list = list(game_word)
-print("word list {}".format(word_list))
+# print("word list {}".format(word_list))
 wrong_list = []
 
 # start the game
@@ -26,7 +31,7 @@ def letter_input(letter):
 
 
 # check letter against secret word
-def check_letter(input_letter, word, word_list):
+def check_letter(input_letter, word, word_list, wrong_list):
     if input_letter in word:
         counter = 0
         for letter in word:
@@ -34,15 +39,19 @@ def check_letter(input_letter, word, word_list):
                 word_list[counter] = input_letter
             counter += 1
         return word_list
+    else:
+        wrong_list.append(input_letter)
+        return wrong_list
 
 
 input_letter = (letter_input(letter=input("Guess a letter...")))
-print(input_letter)
+# print(input_letter)
 
 # call function to populate the word_list for display
-word_list = check_letter(input_letter, word, word_list)
-print("word_list {}".format(word_list))
-
+word_list = check_letter(input_letter, word, word_list, wrong_list)
+# print("word_list {}".format(word_list))
 
 # print(word)
-# print(' '.join(word_list))  # from Soren on the .join for nicer looking display
+print(' '.join(word_list))  # from Soren on the .join for nicer looking display
+print("Here are your previous wrong guesses: " + str(wrong_list))
+print("\n")
