@@ -18,14 +18,24 @@ print("The mystery word contains {} letters.".format(len(word)))
 
 
 # input and check
-def letter_input(letter):
-    if len(letter) > 1:
+def letter_input(letter_input):
+    if len(letter_input) > 1:
         guessed_letter = input("Please guess only one letter...")
+        print(guessed_letter)
         return
 
-letter_input(letter = input("Guess a letter...")) # letter
+letter_input(guessed_letter = input("Guess a letter...")) # letter
 
 
+def letter_check(wrong_count, letter, word):
+    if letter_input not in word:
+        wrong_count += 1
+        return
+
+
+wrong_count = 0
+letter_check(wrong_count, guessed_letter, word)
+print(wrong_count)
 
 
 
