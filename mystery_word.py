@@ -1,14 +1,14 @@
 # file input and random word
 import random
 import os
-os.system("clear")  # Me, and PJ helped with syntax! whoop!
+os.system("clear")  # Me, and PJ helped with the syntax! whoop!
 print("\n")
 
 with open('/usr/share/dict/words', ) as temp_file:
     text_to_analyze = temp_file.read()
     text_to_analyze = text_to_analyze.lower().split()
     word = random.choice(text_to_analyze)
-print("The secret word \"" + word + "\" for test purposes as I do not have a loop")
+print("For test purposes, the secret word is \"" + word + "\"")
 print("\n")
 game_word = len(word) * "-"
 word_list = list(game_word)
